@@ -1,10 +1,20 @@
-def fibonacci_up_to(limit):  # generates the fibonacci sequence up to the limit
+# def fibonacci_up_to(limit):  # generates the fibonacci sequence up to the limit
+#     fibonacci = [0, 1]
+#     for i in range(2, limit + 1):
+#         fibonacci.insert(i, fibonacci[-1] + fibonacci[-2])
+#         if fibonacci[i] > limit:
+#             del fibonacci[i]
+#             return fibonacci
+
+
+def fibonacci_up_to(limit):
     fibonacci = [0, 1]
-    for i in range(2, limit + 1):
-        fibonacci.insert(i, fibonacci[-1] + fibonacci[-2])
-        if fibonacci[i] > limit:
-            del fibonacci[i]
-            return fibonacci
+    while True:
+        next_number = fibonacci[-1] + fibonacci[-2]
+        if next_number > limit:
+            break
+        fibonacci.append(next_number)
+    return fibonacci
 
 
 def fibonacci_classic(numbers):  # generate the fibonacci sequence with x numbers
@@ -17,7 +27,7 @@ def fibonacci_classic(numbers):  # generate the fibonacci sequence with x number
 def fibonacci_ranged(start, stop):
     sequence = []
     fibonacci = fibonacci_up_to(stop)
-    if start not in fibonacci_up_to(stop):
+    if start not in fibonacci:
         valid_start = fibonacci[-1]
         print(
             f"{start} is not a valid fibonacci sequence number. Starting from {valid_start}"
