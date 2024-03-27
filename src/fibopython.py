@@ -32,4 +32,4 @@ def fibonacci_ranged(start, stop):
 
 print(f"Fibonacci Up To: {fibonacci_up_to(35)}")
 print(f"Fibonacci Classic: {fibonacci_classic(15)}")
-print(f"Fibonacci Ranged: {fibonacci_ranged(0,377)}")
+print(f"Fibonacci Ranged: {fibonacci_ranged(8,30)}")
